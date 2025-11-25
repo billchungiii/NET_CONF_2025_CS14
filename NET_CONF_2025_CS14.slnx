@@ -4,4 +4,5 @@
   <Project Path="Partial001/Partial001.csproj" />
   <Project Path="PartialWithSG001/PartialWithSG001.csproj" />
   <Project Path="SG001/SG001.csproj" />
+  <Project Path="UnboundNameOf001/UnboundNameOf001.csproj" />
 </Solution>
