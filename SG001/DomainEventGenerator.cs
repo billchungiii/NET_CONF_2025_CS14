@@ -92,24 +92,6 @@ namespace SG001
                         }
                         events.Add(new EventInfo(eventName, eventType, eventArgsType));
                     }
-                
-                    //if (syntaxRef?.GetSyntax() is EventDeclarationSyntax eventSyntax &&
-                    //    eventSyntax.Modifiers.Any(m => m.Text == "partial"))
-                    //{
-                    //    var eventType = eventSymbol.Type.ToDisplayString();
-                    //    var eventName = eventSymbol.Name;
-
-                    //    // 提取 EventHandler<T> 的 T 型別
-                    //    string? eventArgsType = null;
-                    //    if (eventSymbol.Type is INamedTypeSymbol namedType &&
-                    //        namedType.IsGenericType &&
-                    //        namedType.TypeArguments.Length > 0)
-                    //    {
-                    //        eventArgsType = namedType.TypeArguments[0].Name;
-                    //    }
-
-                    //    events.Add(new EventInfo(eventName, eventType, eventArgsType));
-                    //}
                 }
             }
 
