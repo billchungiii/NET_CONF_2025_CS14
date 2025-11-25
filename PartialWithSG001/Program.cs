@@ -4,10 +4,10 @@
     {
         public static void Main()
         {
-            // 建立實體 - partial constructor 會自動初始化事件基礎設施
+            
             var order = new OrderEntity();
 
-            // 訂閱事件(可選)
+            // 訂閱事件
             order.OrderCreated += (sender, e) =>
             {
                 Console.WriteLine($"訂單已建立: {e.OrderId}, 金額: {e.Amount:C}");
@@ -40,19 +40,12 @@
         public partial event EventHandler<OrderCreatedEventArgs>? OrderCreated;
         public partial event EventHandler<OrderStatusChangedEventArgs>? OrderStatusChanged;
 
-        //protected partial void OnOrderCreated(OrderCreatedEventArgs e);
-        //protected partial void OnOrderStatusChanged(OrderStatusChangedEventArgs e);
-
-
         // 4. 業務邏輯方法 - 手動觸發事件
         public void Create(string orderId, decimal amount)
         {
             OrderId = orderId;
             TotalAmount = amount;
-            Status = OrderStatus.Created;
-
-            // 觸發事件 - source generator 會自動加入發布基礎設施
-            //_OrderCreated?.Invoke(this, new OrderCreatedEventArgs(orderId, amount));
+            Status = OrderStatus.Created;                     
             OnOrderCreated(new OrderCreatedEventArgs(orderId, amount));
         }
 
@@ -60,52 +53,8 @@
         {
             var oldStatus = Status;
             Status = newStatus;
-
-           // _OrderStatusChanged?.Invoke(this, new OrderStatusChangedEventArgs(oldStatus, newStatus));
            OnOrderStatusChanged(new OrderStatusChangedEventArgs(oldStatus, newStatus));
         }
-    }
-
-    public enum OrderStatus
-    {
-        Created,
-        Processing,
-        Shipped,
-        Completed,
-        Cancelled
-    }
-
-    public class OrderCreatedEventArgs : EventArgs
-    {
-        public string OrderId { get; }
-        public decimal Amount { get; }
-        public DateTime CreatedAt { get; }
-
-        public OrderCreatedEventArgs(string orderId, decimal amount)
-        {
-            OrderId = orderId;
-            Amount = amount;
-            CreatedAt = DateTime.UtcNow;
-        }
-    }
-
-    public class OrderStatusChangedEventArgs : EventArgs
-    {
-        public OrderStatus OldStatus { get; }
-        public OrderStatus NewStatus { get; }
-        public DateTime ChangedAt { get; }
-
-        public OrderStatusChangedEventArgs(OrderStatus oldStatus, OrderStatus newStatus)
-        {
-            OldStatus = oldStatus;
-            NewStatus = newStatus;
-            ChangedAt = DateTime.UtcNow;
-        }
-    }
-
-    [AttributeUsage(AttributeTargets.Class)]
-    public class DomainEntityAttribute : Attribute
-    {
     }
 
 
