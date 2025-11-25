@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "設定檔 1": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\PartialWithSG001\\PartialWithSG001.csproj"
+    }
+  }
+}
