@@ -5,8 +5,8 @@
         public static void Main()
         {
             
-            var order = new OrderEntity();            
-            // 訂閱事件
+            var order = new OrderEntity();
+            // 訂閱事件 (也用上了 Null-conditional assignment)
             order?.OrderCreated += (sender, e) =>
             {
                 Console.WriteLine($"訂單已建立: {e.OrderId}, 金額: {e.Amount:C}");
