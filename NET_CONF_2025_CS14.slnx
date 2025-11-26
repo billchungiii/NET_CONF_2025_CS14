@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="CompoundAssignment001/CompoundAssignment001.csproj" />
   <Project Path="Field_Block_Property001/Field_Block_Property001.csproj" />
   <Project Path="LambdaModifiers001/LambdaModifiers001.csproj" />
   <Project Path="Null_Conditional001/Null_Conditional001.csproj" />

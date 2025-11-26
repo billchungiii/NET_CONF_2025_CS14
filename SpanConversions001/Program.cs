@@ -52,4 +52,12 @@ namespace SpanConversions001
         }
 
     }
+
+    /*
+     
+      T[] → Span<T>
+      T[] → ReadOnlySpan<T>
+      Span<T> → ReadOnlySpan<T>
+
+     */
 }
