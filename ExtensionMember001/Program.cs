@@ -6,7 +6,9 @@ namespace ExtensionMember001
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var rect = new MyRectangle { Width = 3, Height = 4 };
+            Console.WriteLine($"對角線長度: {rect.GetDiagonal()}");
+            Console.WriteLine($"周長: {rect.Perimeter}");
         }
     }
 
@@ -16,23 +18,32 @@ namespace ExtensionMember001
         public double Height { get; set; }
 
         public double GetArea()
-            => Width * Height;
-
-        public double GetPerimeter()
-            => 2 * (Width + Height);
+            => Width * Height;       
     }
 
     public static class MyRectangleExtensions
     {
-        /// <summary>
-        /// 根據矩形的寬度與高度計算對角線的長度
-        /// </summary>
-        /// <param name="rect">用來計算對角線的矩形</param>
-        /// <returns>回傳對角線的長度，型別為雙精度浮點數 (double)</returns>
-        public static double GetDiagonal(this MyRectangle rect)
+        
+        extension(MyRectangle rect)
         {
-            if (rect is null) throw new ArgumentNullException(nameof(rect));
-            return Math.Sqrt(rect.Width * rect.Width + rect.Height * rect.Height);
+            /// <summary>
+            /// 根據矩形的寬度與高度計算對角線的長度 (擴充為方法)
+            /// </summary>
+            /// <returns>回傳對角線的長度，型別為雙精度浮點數 (double)</returns>
+            public double GetDiagonal()
+            {
+                if (rect is null) { throw new NullReferenceException(); }
+                return Math.Sqrt(rect.Width * rect.Width + rect.Height * rect.Height);
+            }
+
+            public double Perimeter
+            {
+                get
+                {
+                    if (rect is null ) { throw new NullReferenceException(); }
+                    return (rect.Width + rect.Height) * 2;
+                }
+            }
         }
     }
 }

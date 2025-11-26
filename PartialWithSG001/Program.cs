@@ -5,23 +5,22 @@
         public static void Main()
         {
             
-            var order = new OrderEntity();
-
+            var order = new OrderEntity();            
             // 訂閱事件
-            order.OrderCreated += (sender, e) =>
+            order?.OrderCreated += (sender, e) =>
             {
                 Console.WriteLine($"訂單已建立: {e.OrderId}, 金額: {e.Amount:C}");
             };
 
-            order.OrderStatusChanged += (sender, e) =>
+            order?.OrderStatusChanged += (sender, e) =>
             {
                 Console.WriteLine($"訂單狀態變更: {e.OldStatus} -> {e.NewStatus}");
             };
 
             // 執行業務邏輯
-            order.Create("ORD-001", 1500.00m);
-            order.ChangeStatus(OrderStatus.Processing);
-            order.ChangeStatus(OrderStatus.Shipped);
+            order?.Create("ORD-001", 1500.00m);
+            order?.ChangeStatus(OrderStatus.Processing);
+            order?.ChangeStatus(OrderStatus.Shipped);
         }
 
     }
