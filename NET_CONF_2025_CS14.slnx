@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Field_Block_Property001/Field_Block_Property001.csproj" />
+  <Project Path="LambdaModifiers001/LambdaModifiers001.csproj" />
   <Project Path="Null_Conditional001/Null_Conditional001.csproj" />
   <Project Path="Partial001/Partial001.csproj" />
   <Project Path="PartialWithSG001/PartialWithSG001.csproj" />
