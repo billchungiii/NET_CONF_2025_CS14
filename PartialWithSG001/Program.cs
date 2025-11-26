@@ -36,8 +36,8 @@
         public partial OrderEntity();
 
         // 3. 宣告 partial events - 由 source generator 自動加入發布邏輯
-        public partial event EventHandler<OrderCreatedEventArgs>? OrderCreated;
-        public partial event EventHandler<OrderStatusChangedEventArgs>? OrderStatusChanged;
+        public partial event EventHandler<OrderCreatedEventArgs> OrderCreated;
+        public partial event EventHandler<OrderStatusChangedEventArgs> OrderStatusChanged;
 
         // 4. 業務邏輯方法 - 手動觸發事件
         public void Create(string orderId, decimal amount)

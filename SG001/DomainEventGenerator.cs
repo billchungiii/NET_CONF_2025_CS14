@@ -37,7 +37,7 @@ namespace SG001
         /// <summary>
         /// 使用語意模型檢查是否標記 [DomainEntity]
         /// </summary>
-        private static INamedTypeSymbol? GetSemanticTargetForGeneration(GeneratorAttributeSyntaxContext context)
+        private static INamedTypeSymbol GetSemanticTargetForGeneration(GeneratorAttributeSyntaxContext context)
         {
             return context.TargetSymbol as INamedTypeSymbol;
         }
@@ -301,6 +301,6 @@ namespace SG001
         /// <summary>
         /// 事件資訊記錄
         /// </summary>
-        private record struct EventInfo(string EventName, string EventType, string? EventArgsType);
+        private record struct EventInfo(string EventName, string EventType, string EventArgsType);
     }
 }

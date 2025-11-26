@@ -8,7 +8,9 @@ namespace ExtensionMember001
         {
             var rect = new MyRectangle { Width = 3, Height = 4 };
             Console.WriteLine($"對角線長度: {rect.GetDiagonal()}");
+            Console.WriteLine($"對角線長度另一種 : {MyRectangleExtensions.GetDiagonal(rect)}");
             Console.WriteLine($"周長: {rect.Perimeter}");
+            Console.WriteLine($"周長另一種: {MyRectangleExtensions.get_Perimeter(rect)}");
         }
     }
 
