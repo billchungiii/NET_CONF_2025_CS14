@@ -4,10 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var sample = new SampleClass();
+            sample.X = 10;
         }
     }
 
+
+   
     public class SampleClass
     {
         private int _x;
@@ -23,6 +26,9 @@
             }
         }
 
+        /// <summary>
+        /// field 基本用法
+        /// </summary>
         public int Y
         {
             get; 
@@ -35,5 +41,10 @@
             }
         }
 
+        /// <summary>
+        /// 延遲初始化
+        /// </summary>
+        public IReadOnlyList<int> Numbers => field ?? [];
+      
     }
 }
