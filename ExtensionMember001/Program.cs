@@ -1,5 +1,6 @@
 ﻿using System;
 
+/// <summary> 偽裝成執行個體方法與屬性 </summary>
 namespace ExtensionMember001
 {
     internal class Program
