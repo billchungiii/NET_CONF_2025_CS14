@@ -14,6 +14,9 @@
         }
     }
 
+    /// <summary>
+    /// 擴充靜態成員
+    /// </summary>
     public static class MyExtensions
     {
         extension(int source)
