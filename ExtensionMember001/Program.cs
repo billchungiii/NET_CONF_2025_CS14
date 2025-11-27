@@ -39,6 +39,10 @@ namespace ExtensionMember001
                 return Math.Sqrt(rect.Width * rect.Width + rect.Height * rect.Height);
             }
 
+            /// <summary>
+            ///  根據矩形的寬度與高度計算周長 (擴充為屬性)
+            ///  擴充屬性目前無法存取私有欄位，也不能使用 field 關鍵字
+            /// </summary>
             public double Perimeter
             {
                 get
