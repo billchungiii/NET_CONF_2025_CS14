@@ -2,6 +2,8 @@
   <Project Path="CompoundAssignment001/CompoundAssignment001.csproj" />
   <Project Path="ExtensionMember001/ExtensionMember001.csproj" />
   <Project Path="ExtensionMember002/ExtensionMember002.csproj" Id="573b184a-3aaf-46b2-bf01-d42519cdae54" />
+  <Project Path="ExtensionMember003/ExtensionMember003.csproj" Id="45859179-fa4b-441e-8a62-15e0361dc7fe" />
+  <Project Path="ExtensionMember004/ExtensionMember004.csproj" Id="326ab602-13ce-4ee0-8aa3-58c774b3538b" />
   <Project Path="Field_Block_Property001/Field_Block_Property001.csproj" />
   <Project Path="LambdaModifiers001/LambdaModifiers001.csproj" />
   <Project Path="Null_Conditional001/Null_Conditional001.csproj" />
